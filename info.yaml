@@ -1,6 +1,6 @@
 # Tiny Tapeout project information
 project:
-  title: "autocomp load-adaptive sub-uW op-amp"      # Project title
+  title: "autocomp"      # Project title
   author: "Kevin Kong"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description: "Sub-uW two-stage op-amp with self-calibrating load-adaptive bias (SAR search)"      # One line description of what your project does
