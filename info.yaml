@@ -1,11 +1,11 @@
 # Tiny Tapeout project information
 project:
-  title:        "autocomp load-adaptive sub-uW op-amp"      # Project title
-  author:       "Kevin Kong"      # Your name
+  title: "autocomp load-adaptive sub-uW op-amp"      # Project title
+  author: "Kevin Kong"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "Sub-uW two-stage op-amp with self-calibrating load-adaptive bias (SAR search)      # One line description of what your project does
+  description: "Sub-uW two-stage op-amp with self-calibrating load-adaptive bias (SAR search)"      # One line description of what your project does
   language:     "Analog" # other examples include Verilog, Amaranth, VHDL, etc
-  clock_hz:     100000       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     100000  # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "2x2"          # Valid values for analog projects: 1x2, 2x2
@@ -18,7 +18,7 @@ project:
   top_module:  "tt_um_autocomp"
 
   # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
-  source_files:        
+  source_files:
     - "project.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.

@@ -10,3 +10,4 @@ takes the code from pins instead. The detector trim is read out on `uio[7:4]`, a
 unit current for measurement. With `OUT_EN` high, an on-chip unity-gain buffer drives `ua[1]`, so the pad, the demo
 board's 10 MΩ pull-down and a scope probe load the buffer instead of the op-amp (rev 10).
 
+
