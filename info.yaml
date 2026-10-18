@@ -1,21 +1,21 @@
 # Tiny Tapeout project information
 project:
-  title:        ""      # Project title
-  author:       ""      # Your name
+  title:        "autocomp load-adaptive sub-uW op-amp"      # Project title
+  author:       "Kevin Kong"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
+  description:  "Sub-uW two-stage op-amp with self-calibrating load-adaptive bias (SAR search)      # One line description of what your project does
   language:     "Analog" # other examples include Verilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     100000       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
-  tiles: "1x2"          # Valid values for analog projects: 1x2, 2x2
+  tiles: "2x2"          # Valid values for analog projects: 1x2, 2x2
 
   # How many analog pins does your project use?
-  analog_pins: 2        # Valid values: 0 to 6
+  analog_pins: 3        # Valid values: 0 to 6
   uses_vapwr: false       # Set to true if your project uses second analog power supply (VAPWR) in addition to 1.8V (VDPWR)
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_example"
+  top_module:  "tt_um_autocomp"
 
   # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
   source_files:        
@@ -25,39 +25,39 @@ project:
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
-  ui[6]: ""
-  ui[7]: ""
+  ui[0]: "CLK_SEL (1 = clk pin, 0 = on-chip oscillator)"
+  ui[1]: "MAN (1 = code from KE pins)"
+  ui[2]: "OUT_EN (buffered VOUT to ua[1])"
+  ui[3]: "S0 (on-chip load select)"
+  ui[4]: "S1 (on-chip load select)"
+  ui[5]: "S2 (on-chip load select)"
+  ui[6]: "S3 (on-chip load select)"
+  ui[7]: "MON_EN (1 = bias-current monitor on ua[2])"
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
-  uo[6]: ""
-  uo[7]: ""
+  uo[0]: "KO0 (code in use)"
+  uo[1]: "KO1 (code in use)"
+  uo[2]: "KO2 (code in use)"
+  uo[3]: "KO3 (code in use)"
+  uo[4]: "DONE"
+  uo[5]: "OSF (overshoot flag)"
+  uo[6]: "CK_MON (clock in use / 16)"
+  uo[7]: "CAL (calibrating)"
 
   # Bidirectional pins
-  uio[0]: ""
-  uio[1]: ""
-  uio[2]: ""
-  uio[3]: ""
-  uio[4]: ""
-  uio[5]: ""
-  uio[6]: ""
-  uio[7]: ""
+  uio[0]: "KE0 (in)"
+  uio[1]: "KE1 (in)"
+  uio[2]: "KE2 (in)"
+  uio[3]: "KE3 (in)"
+  uio[4]: "KT0 (trim code, out)"
+  uio[5]: "KT1 (trim code, out)"
+  uio[6]: "KT2 (trim code, out)"
+  uio[7]: "KT3 (trim code, out)"
 
   # Analog pins - make sure to also set "analog_pins" above, else the pins won't be connected
-  ua[0]: ""
-  ua[1]: ""
-  ua[2]: ""
+  ua[0]: "VIN"
+  ua[1]: "VOUT (through the on-chip buffer while OUT_EN = 1)"
+  ua[2]: "IBMON (bias monitor current out)"
   ua[3]: ""
   ua[4]: ""
   ua[5]: ""
